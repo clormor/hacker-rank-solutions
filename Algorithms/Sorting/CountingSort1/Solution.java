@@ -6,19 +6,12 @@ import java.util.Scanner;
 public class Solution {
 
     static int[] countingSort(int[] arr) {
+        // array of all possible values
         int[] counts = new int[100];
         for (int i = 0; i < arr.length; i++) {
             counts[arr[i]] += 1;
         }
-
-        int n = 0;
-        int[] result = new int[arr.length];
-        for (int i = 0; i < counts.length; i++) {
-            while (counts[i]-- > 0) {
-                result[n++] = i;
-            }
-        }
-        return result;
+        return counts;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -56,3 +49,4 @@ public class Solution {
         scanner.close();
     }
 }
+
